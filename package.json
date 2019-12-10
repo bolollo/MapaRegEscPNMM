@@ -12,11 +12,11 @@
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "parcel-bundler": "^1.12.4"
+    "babel-preset-env": "^1.7.0"
   },
   "dependencies": {
     "@geostarters/eslint-config": "^0.0.3",
+    "jquery": "^3.4.1",
     "mapbox-gl": "^1.5.0",
     "mapbox-gl-controls": "^1.5.5"
   }

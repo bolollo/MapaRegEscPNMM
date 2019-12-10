@@ -1,0 +1,40 @@
+#header {
+    background-color: var(--primary-color);
+    height: var(--header-height);
+    opacity: 0.9;
+}
+
+#headerLogo {
+    color: var(--header-text-color) !important;
+    margin: 5px 10px;
+}
+
+#headerLogo .logo{
+    position: relative;
+    min-height: 27px;
+    min-width: 120px;
+}
+
+#headerTitle {
+    color: var(--header-text-color) !important;
+    background: none;
+    border: none;
+}
+
+#headerTitle div {
+    color: var(--header-text-color) !important;
+    background: none;
+    border: none;
+}
+
+#headerInfo {
+    color: var(--header-text-color) !important;
+    margin-top: 12px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+#headerInfo a {
+    color: var(--header-text-color) !important;
+}
+
