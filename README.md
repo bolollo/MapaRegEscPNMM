@@ -1,6 +1,10 @@
 
 # Template de ejemplo para el Mapa de regulació de l'escalada Patronat de la Muntanya de Montserrat
 
+:warning: **Este no es el mapa oficial.**
+
+El mapa oficial está en http://muntanyamontserrat.gencat.cat/ca/el_parc/escalada/
+
 Basado en el Fast and tiny JS and HTML webmap template https://github.com/geostarters/fast-webmap-template
 
 
