@@ -40,7 +40,7 @@ function addItems(map, container) {
 	const template = document.createElement("template");
 	template.innerHTML = html;
 
-	$(container).append(template.content.cloneNode(true));
+	$(container).html(template.content.cloneNode(true));
 
 	$(container).find('.ui.selection.dropdown').dropdown({
 		clearable: true,

@@ -7,6 +7,8 @@ El mapa oficial está en http://muntanyamontserrat.gencat.cat/ca/el_parc/escalad
 
 Basado en el Fast and tiny JS and HTML webmap template https://github.com/geostarters/fast-webmap-template
 
+## Demo
+https://bolollo.github.io/MapaRegEscPNMM/
 
 ### Desarrollo
 
