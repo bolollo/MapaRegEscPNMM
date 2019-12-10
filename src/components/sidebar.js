@@ -11,24 +11,30 @@ export default function createSidebar(parent) {
 			<i class="angle left icon"></i>
 		</div>
 		<div class="ui segment" id="panel">
-			<a class="item">
-				<i class="home icon"></i>
-				Home
-			</a>
-			<a class="item">
-				<i class="block layout icon"></i>
-				Topics
-			</a>
-			<a class="item">
-				<i class="smile icon"></i>
-				Friends
-			</a>
+			<div class="ui accordion">
+				<div class="title active">
+					<i class="dropdown icon"></i>
+					Capes
+				</div>
+				<div class="content active capes">
+					
+				</div>
+				<div class="title">
+					<i class="dropdown icon"></i>
+					Cercar
+				</div>
+				<div class="content cerca">
+					
+				</div>
+			</div>
 		</div>
 	</div>`;
 	const template = document.createElement("template");
 	template.innerHTML = html;
 
 	$(parent).append(template.content.cloneNode(true));
+
+	$('.ui.accordion').accordion();
 
 	$("#toggleBtn").click(function() {
 		if ($("#sidebar").hasClass("movein")) {

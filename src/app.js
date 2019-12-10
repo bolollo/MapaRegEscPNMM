@@ -4,6 +4,8 @@ import createRoot from "./components/root";
 import createFooter from "./components/footer";
 import createMap from "./components/map";
 import createSidebar from "./components/sidebar";
+import createMapLayers from "./components/mapLayers";
+import createCercador from "./components/cercador";
 import "./css/app.css";
 
 export default () => {
@@ -16,8 +18,12 @@ export default () => {
 
   document.getElementById("footer").innerHTML = createFooter();
 
-  createMap();
+  const map = createMap();
 
   createSidebar(document.getElementById("root"));
+
+  createMapLayers({parent: document.querySelector("#sidebar > #panel > .accordion > .capes"), map: map});
+
+  createCercador({parent: document.querySelector("#sidebar > #panel > .accordion > .cerca"), map: map});
 
 }

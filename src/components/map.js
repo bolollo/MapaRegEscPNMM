@@ -12,8 +12,8 @@ export default function createMap() {
 		maxZoom: 18,
 		hash: true,
 		style: "https://geoserveis.icgc.cat/contextmaps/icgc.json",
-		center: [1.88979, 41.69589],
-		zoom: 13.61,
+		center: [1.80881, 41.58995],
+		zoom: 12.59,
 		attributionControl: false,
 		preserveDrawingBuffer: true
 	});
@@ -27,19 +27,32 @@ export default function createMap() {
 		compact: true
 	}));
 
+	// Butons de d'escala
+	map.addControl(new mapboxgl.ScaleControl({
+		maxWidth: 100,
+		unit: 'metric'}));
+
+	map.addControl(new mapboxgl.GeolocateControl({
+		positionOptions: {
+			enableHighAccuracy: true,
+			watchPosition: true}}));
+
 	map.addControl(new StylesControl({
 		styles: [
 		  {
-			label: 'Orto',
+			label: 'Satellite',
 			styleName: 'Mapbox Streets',
-			styleUrl: 'https://tilemaps.icgc.cat/tileserver/styles/orto-inun-rc.json',
+			styleUrl: 'https://tilemaps.icgc.cat/tileserver/styles/hibrid.json',
 		  }, {
-			label: 'Topo',
+			label: 'Mapa',
 			styleName: 'totpo',
-			styleUrl: 'https://tilemaps.icgc.cat/tileserver/styles/topo-inun-rc.json',
+			styleUrl: 'https://tilemaps.icgc.cat/tileserver/styles/icgc.json',
 		  },
 		],
-		onChange: (style) => console.log(style),
+		onChange: (style) => {
+			console.log(style);
+			setTimeout(function(){map.fire('load');}, 300);
+		},
 		// map.setStyle(style.styleUrl);
 	  }), 'top-right');
 

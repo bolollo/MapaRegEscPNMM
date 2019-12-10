@@ -1,4 +1,4 @@
-import logoIcgc from "../assets/ICGC_white.svg";
+import logoIcgc from "../assets/logo_generalitat_blanc.png";
 import "./header.css";
 
 export default function createHeader() {
@@ -6,15 +6,15 @@ export default function createHeader() {
     <div id="headerPanel" class="row">
         <div class="three wide column">
             <div id="headerLogo">
-                <a title="Institut Catogràfic i Geològic de Catalunya" href="https://www.icgc.cat" target="_blank">
+                <a title="Generalitat de Catalunya" href="https://web.gencat.cat/" target="_top">
                     <img src="${logoIcgc}" class="ui image logo">
                 </a>
             </div>
         </div>
         <div class="ten wide column">
-            <h2 id="headerTitle" class="ui center  aligned block header">
+            <h2 id="headerTitle" class="ui center aligned block header">
                 <div class="content">
-                    TITLE
+                Mapa de regulació de l'escalada
                 </div>
             </h2>
         </div>
