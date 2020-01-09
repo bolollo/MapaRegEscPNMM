@@ -14,7 +14,9 @@ import images from "../assets/data/images";
 function addSources(map) {
 	if (map.isStyleLoaded()) {
 		Object.keys(sources).forEach((key) => {
-			map.addSource(key, sources[key]);
+			if (!map.getSource(key)) {
+				map.addSource(key, sources[key]);
+			}
 		});
 		loadImages(map);
 		addLayers(map);
@@ -51,14 +53,24 @@ function toggleLayer(item, map) {
 		if (visibility === "visible") {
 			$(item).addClass("active");
 			map.setLayoutProperty(layer, "visibility", "none");
+			setStyleLayerVisibility(layer, "none");
 			toggleableLayers[id].visibility = false;
 		} else {
 			$(item).removeClass("active");
 			map.setLayoutProperty(layer, "visibility", "visible");
+			setStyleLayerVisibility(layer, "visible");
 			toggleableLayers[id].visibility = true;
 		}  
 	});
 }
+
+function setStyleLayerVisibility(id, visibility){
+	styles.forEach((style) => {
+		if(style.id === id) {
+			style.layout.visibility = visibility;
+		}
+	});
+} 
 
 function waiting(map) {
 	if (!map.isStyleLoaded()) {

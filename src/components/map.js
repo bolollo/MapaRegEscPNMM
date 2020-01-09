@@ -50,11 +50,9 @@ export default function createMap() {
 		  },
 		],
 		onChange: (style) => {
-			console.log(style);
 			setTimeout(function(){map.fire('load');}, 300);
 		},
-		// map.setStyle(style.styleUrl);
-	  }), 'top-right');
+	}), 'top-right');
 
 	return map;
 }

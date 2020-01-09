@@ -333,7 +333,7 @@ export default [
     type: "fill",
     source: "aparcaments-json",
     layout: {
-      visibility: "none"
+      visibility: "visible"
     },
     paint: {
       "fill-opacity": 0.8,

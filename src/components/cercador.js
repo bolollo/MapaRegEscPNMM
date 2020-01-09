@@ -44,6 +44,7 @@ function addItems(map, container) {
 
 	$(container).find('.ui.selection.dropdown').dropdown({
 		clearable: true,
+		fullTextSearch: true,
 		onChange: function (val, text, choice) {
 			const [lon,lat] = val.split(",");
 			map.flyTo({
