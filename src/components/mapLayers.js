@@ -7,7 +7,6 @@ import "./mapLayers.css";
 
 import sources from "../assets/data/sources";
 
-import toggleableLayers from "../assets/data/toggleableLayers";
 import styles from "../assets/data/styles";
 import images from "../assets/data/images";
 
@@ -30,13 +29,17 @@ function addSources(map) {
 
 function addLayers(map) {
 	styles.forEach((style) => {
-		map.addLayer(style);
+		if(!map.getLayer(style.id)){
+			map.addLayer(style);
+		}
 	});
 }
 
 function loadImages(map){
 	Object.keys(images).forEach((key) => {
-		map.loadImage(images[key], function (error, image) {if (error) throw error;addImage2Map(image, key, map);});
+		if(!map.hasImage(key)){
+			map.loadImage(images[key], function (error, image) {if (error) throw error;addImage2Map(image, key, map);});
+		}
 	});
 }
 
@@ -46,7 +49,7 @@ function addImage2Map(image, id, map) {
 	}
 }
 
-function toggleLayer(item, map) {
+function toggleLayer(item, map, toggleableLayers) {
 	const id = parseInt($(item).attr("class").split(/\s+/).find(cls => cls.includes("lay_")).replace("lay_",""));
 	toggleableLayers[id].layers.forEach(function(layer){
 		var visibility = map.getLayoutProperty(layer, "visibility");
@@ -194,6 +197,7 @@ export default function createMapLayers(options) {
 
 	const container = options.parent;
 	const map = options.map;
+	const toggleableLayers = options.toggleableLayers;
 
 	// Càrrega LAYERS, IMAGES
 	map.on('load', function () {
@@ -212,7 +216,7 @@ export default function createMapLayers(options) {
 	$(container).append(template.content.cloneNode(true));
 
 	$(container).find("a").click(function() {
-		toggleLayer(this, map);
+		toggleLayer(this, map, toggleableLayers);
 	});
 
 }

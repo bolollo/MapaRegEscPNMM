@@ -21,11 +21,19 @@ export default function createSidebar(parent) {
 				</div>
 				<div class="title">
 					<i class="dropdown icon"></i>
+					Senderisme
+				</div>
+				<div class="content senderisme">
+					
+				</div>
+				<div class="title">
+					<i class="dropdown icon"></i>
 					Cercar
 				</div>
 				<div class="content cerca">
 					
 				</div>
+
 			</div>
 		</div>
 	</div>`;

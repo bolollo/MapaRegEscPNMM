@@ -6,6 +6,8 @@ import createMap from "./components/map";
 import createSidebar from "./components/sidebar";
 import createMapLayers from "./components/mapLayers";
 import createCercador from "./components/cercador";
+import capesLayers from "./assets/data/capesLayers";
+import senderismeLayers from "./assets/data/senderismeLayers";
 import "./css/app.css";
 
 export default () => {
@@ -22,7 +24,9 @@ export default () => {
 
   createSidebar(document.getElementById("root"));
 
-  createMapLayers({parent: document.querySelector("#sidebar > #panel > .accordion > .capes"), map: map});
+  createMapLayers({parent: document.querySelector("#sidebar > #panel > .accordion > .capes"), map: map, toggleableLayers: capesLayers});
+
+  createMapLayers({parent: document.querySelector("#sidebar > #panel > .accordion > .senderisme"), map: map, toggleableLayers: senderismeLayers});
 
   createCercador({parent: document.querySelector("#sidebar > #panel > .accordion > .cerca"), map: map});
 
