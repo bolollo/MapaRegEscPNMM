@@ -103,6 +103,16 @@ function removePointer(map){
 	map.getCanvas().style.cursor = "";
 }
 
+function addEventToLayers(map, event, layers, popup, fn){
+
+    layers.forEach((layer) => {
+        map.on(event, layer, function(e) {
+            fn(e, popup);
+        });
+    });
+
+}
+
 function addMapLayersEvent(map) {
 	
 	// Popup on Hoover
@@ -111,19 +121,19 @@ function addMapLayersEvent(map) {
 		closeOnClick: false
 	});
 
-	map.on("mouseenter", "aparcaments-point", function(e) {
-		addPointer(map);
-		var description = e.features[0].properties.Nom;
-		var coordinates = getEventCoords(e);
-		popup.setLngLat(coordinates)
-			.setHTML(`<p align= "center">${description}</p>`)
-			.addTo(map);
-	});
+	addEventToLayers(map, "mouseenter", ["aparcaments-point"], popup, function(e, popup) {
+        addPointer(map);
+        var description = e.features[0].properties.Nom;
+        var coordinates = getEventCoords(e);
+        popup.setLngLat(coordinates)
+            .setHTML(`<p align= "center">${description}</p>`)
+            .addTo(map);
+    });
 
-	map.on("mouseleave", "aparcaments-point", function() {
-		removePointer(map);
-		popup.remove();
-	});
+	addEventToLayers(map, "mouseleave", ["aparcaments-point"], popup, function(e, popup) {
+        removePointer(map);
+        popup.remove();
+    });
 
 	map.on("mouseenter", "camins-geojson-LineString", function () {
 		addPointer(map);
