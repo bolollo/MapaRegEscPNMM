@@ -14,13 +14,13 @@ export default function createHeader() {
         <div class="ten wide column">
             <h2 id="headerTitle" class="ui center aligned block header">
                 <div class="content">
-                Mapa de regulació de l'escalada
+                Mapa de l'Escalada a Montserrat
                 </div>
             </h2>
         </div>
         <div class="right floated two wide column">
             <div id="headerInfo">
-                <a title="Informació" href="http://betaportal.icgc.cat" target="_blank">
+                <a title="Informació" href="http://muntanyamontserrat.gencat.cat/ca/el_parc/escalada/" target="_blank">
                     <i class="large info circle link white icon"></i>
                 </a>
             </div>

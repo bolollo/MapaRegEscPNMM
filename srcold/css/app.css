@@ -1,0 +1,44 @@
+:root {
+	--primary-color: #333333;
+	--panel-background: #efefef;
+	--secundary-color: #c00000;
+	--header-text-color: white;
+	--white-shadow: #e3e8e7;
+	--text-color: #333;
+	--header-height: 65px;
+	--footer-height: 45px;
+	--footer-color: #f5f5f5;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.app {
+	height: 100vh;
+	display: flex;
+	/* Direction of the items, can be row or column */
+	flex-direction: column;
+}
+
+#root {
+	display: flex;
+	flex: 1;
+}
+
+#map {
+	position: relative;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.ui.modal > .content > .image {
+	width: 100%;
+}

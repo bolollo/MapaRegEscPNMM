@@ -7,7 +7,9 @@ import createSidebar from "./components/sidebar";
 import createMapLayers from "./components/mapLayers";
 import createCercador from "./components/cercador";
 import capesLayers from "./assets/data/capesLayers";
-import senderismeLayers from "./assets/data/senderismeLayers";
+import escaladaLayers from "./assets/data/escaladaLayers";
+import sources from "./assets/data/sources";
+
 import "./css/app.css";
 
 export default () => {
@@ -24,10 +26,34 @@ export default () => {
 
   createSidebar(document.getElementById("root"));
 
-  createMapLayers({parent: document.querySelector("#sidebar > #panel > .accordion > .capes"), map: map, toggleableLayers: capesLayers});
+  createMapLayers({
+    parent: document.querySelector("#sidebar > #panel > .accordion > .capes"), 
+    map: map, 
+    toggleableLayers: capesLayers
+  });
 
-  createMapLayers({parent: document.querySelector("#sidebar > #panel > .accordion > .senderisme"), map: map, toggleableLayers: senderismeLayers});
+  createMapLayers({
+    parent: document.querySelector("#sidebar > #panel > .accordion > .escalada"), 
+    map: map, 
+    toggleableLayers: escaladaLayers
+  });
 
-  createCercador({parent: document.querySelector("#sidebar > #panel > .accordion > .cerca"), map: map});
+  createCercador({
+    parent: document.querySelector("#sidebar > #panel > .accordion > .cerca"), 
+    map: map, 
+    data: sources["agulles-point"].data.features, 
+    placeholder: "Cerca agulles ...", 
+    field: ["nom"],
+    filter: "id_agulla"
+  });
+
+  createCercador({
+    parent: document.querySelector("#sidebar > #panel > .accordion > .cerca_vies"), 
+    map: map, 
+    data: sources["vies_escalada"].data.features, 
+    placeholder: "Cerca vies ...", 
+    field: ["field_2", "Nom de l'agulla o roca"],
+    filter: "Nº Via"
+  });
 
 }

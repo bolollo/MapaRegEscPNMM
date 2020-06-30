@@ -1,0 +1,15 @@
+.layers a{
+	color: white;
+}
+
+.ui.link.list a.item{
+	color: white;
+}
+
+.ui.link.list.list a.item:hover {
+    color: white;
+}
+
+.ui.link.list.list a.item.active:hover {
+    color: #ccc;
+}

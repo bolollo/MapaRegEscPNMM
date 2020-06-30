@@ -1,0 +1,48 @@
+#sidebar {
+    --sidebar-width: 300px;
+    --sidebar-width-hidden: -305px;
+    --sidebar-width-button: 350px;
+}
+
+#sidebar {
+    position: fixed;
+    border-radius: 0px;
+    overflow-y: auto;
+    width: var(--sidebar-width-button);
+    height: calc(100% - 95px);
+
+}
+
+#panel {
+    width: var(--sidebar-width);
+    height: calc(100% - 95px);
+    background-color: var(--primary-color);
+    overflow-y: auto;
+    color: var(--header-text-color);
+}
+
+#toggleBtn {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+}
+
+.movein {
+    transition: all .75s;
+    transform: translateX(0px);
+}
+
+.moveout {
+    transition: all .75s;
+    transform: translateX(var(--sidebar-width-hidden));
+}
+
+.ui.accordion .title {
+    color: var(--header-text-color) !important;
+}
+
+.ui.accordion .title.active {
+    font-weight: bold;
+}

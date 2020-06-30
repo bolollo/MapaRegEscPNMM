@@ -21,4 +21,8 @@
 	padding: 0 5px;
 	font-size: 0.788em;
     color: #999999;
-}
+    }
+
+#peuAvis p {
+	margin: 0;
+    }

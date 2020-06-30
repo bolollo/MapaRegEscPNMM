@@ -8,6 +8,7 @@ export default function createFooter() {
 			<img src="${logoGencat}" width="101" height="27" alt="www.gencat.cat" class="adaptImage"></a>
 		</div>
 		<div id="peuAvis">
+            <p>Si voleu enviar-nos suggeriments, correccions o simplement col•laborar per millorar la usabilitat i ampliació de la informació del mapa, podeu adreçar-vos a: <a title="Patronat de la Muntanya de Montserrat" href="mailto:patronatmontserrat.presidencia@gencat.cat">Patronat de la Muntanya de Montserrat</a></p>
 			<p><a title="Avis legal" href="https://web.gencat.cat/ca/menu-ajuda/ajuda/avis_legal/" target="_self">Avís legal</a>: La ©Generalitat de Catalunya permet la reutilització dels continguts i de les dades sempre que se'n citi la font i la data d'actualització, que no es desnaturalitzi la informació i que no es contradigui amb una llicència específica.</p>
 		</div>
 	</div>`;

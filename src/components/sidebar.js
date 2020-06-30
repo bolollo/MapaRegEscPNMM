@@ -14,26 +14,35 @@ export default function createSidebar(parent) {
 			<div class="ui accordion">
 				<div class="title active">
 					<i class="dropdown icon"></i>
-					Capes
+					Escalada
 				</div>
-				<div class="content active capes">
+				<div class="content active escalada">
 					
 				</div>
 				<div class="title">
 					<i class="dropdown icon"></i>
-					Senderisme
+					Seguretat
 				</div>
-				<div class="content senderisme">
+				<div class="content capes">
 					
 				</div>
 				<div class="title">
 					<i class="dropdown icon"></i>
-					Cercar
+					Cercador d'agulles
 				</div>
 				<div class="content cerca">
 					
 				</div>
-
+				<div class="title">
+					<i class="dropdown icon"></i>
+					Cercador de vies
+				</div>
+				<div class="content cerca_vies">
+					
+				</div>
+				<div class="title">
+					<a href="./Consells/consells.html" class="title">Consells i Recomanacions</a>
+				</div>
 			</div>
 		</div>
 	</div>`;
