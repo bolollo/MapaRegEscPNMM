@@ -42,3 +42,7 @@ body {
 .ui.modal > .content > .image {
 	width: 100%;
 }
+
+.mapboxgl-popup {
+	max-width: 400px !important;
+}

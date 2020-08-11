@@ -53,16 +53,19 @@ function addItems(map, container, data, placeholder, field, filter) {
 	$(container).find('.ui.selection.dropdown').dropdown({
 		clearable: true,
 		fullTextSearch: true,
+		ignoreDiacritics: true,
+		match: "text",
 		onChange: function (val, text, choice) {
 			const [lon,lat] = val.split(",");
-			map.flyTo({
-				center: [lon, lat],
-				zoom: 18
-			});
+			if (lon && lat){
+				map.flyTo({
+					center: [lon, lat],
+					zoom: 18
+				});
+			}
 		}
   	});
 }
-
 
 export default function createCercador(options) {
 

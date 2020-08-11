@@ -13,3 +13,11 @@
 .ui.link.list.list a.item.active:hover {
     color: #ccc;
 }
+
+.column2 {
+    column-count: 2;
+}
+
+.column3 {
+    column-count: 3;
+}

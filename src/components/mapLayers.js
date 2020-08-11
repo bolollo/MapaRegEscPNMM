@@ -210,6 +210,14 @@ function addMapLayersEvent(map) {
         });
     });
 
+    addEventToLayers(map, "mouseenter", ["vies_escalada_cluster", "vies_escalada_agulles"], popup, function(e, popup) {
+        map.getCanvas().style.cursor = "pointer";
+    });
+
+    addEventToLayers(map, "mouseleave", ["vies_escalada_cluster", "vies_escalada_agulles"], popup, function(e, popup) {
+        map.getCanvas().style.cursor = "";
+    });
+
     map.on("click", function(e) {
 
         // set bbox as [tolerance]px reactangle area around clicked point
@@ -260,12 +268,24 @@ function addMapLayersEvent(map) {
 
             html.push(`<p>Sector: ${properties.sectorAgulla}</p>`);
 
+            if (properties.vies.length > 5) {
+                if (properties.vies.length > 10) {
+                    html.push(`<div class="column3">`);
+                }else{
+                    html.push(`<div class="column2">`);
+                }
+            }
+
             properties.vies.forEach((via) => {
                 var any =  via.aperturaAny ? `(${via.aperturaAny})` : "";
                 var escaladors  = via.aperturaNom ? `- ${via.aperturaNom}` : "";
 
                 html.push(`<p>${via.nomVia} ${any} ${escaladors}</p>`);
             });
+
+            if (properties.vies.length > 5){
+                html.push(`</div>`);
+            }
 
             if (html.length === 0) {
                 return;
