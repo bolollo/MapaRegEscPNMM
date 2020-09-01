@@ -260,7 +260,7 @@ function addMapLayersEvent(map) {
 
         } else if (features3.length) {
 
-            popup.remove();
+            popup.remove(features3);
             var feature3 = features3[0];
             feature3.properties.vies = JSON.parse(feature3.properties.vies);
             var properties = feature3.properties;

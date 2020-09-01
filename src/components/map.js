@@ -48,7 +48,7 @@ export default function createMap() {
 			styleName: 'totpo',
 			styleUrl: 'https://tilemaps.icgc.cat/tileserver/styles/icgc.json',
 		  }, {
-			label: 'Topogràfic ICGC',
+			label: 'Topogràfic',
 			styleName: 'topo',
 			styleUrl: 'https://tilemaps.icgc.cat/tileserver/styles/topo_icgc.json',
 		  },

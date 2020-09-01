@@ -10,8 +10,12 @@
     color: white;
 }
 
+.ui.link.list.list a.item.active {
+    color: #7ea784;
+}
+
 .ui.link.list.list a.item.active:hover {
-    color: #ccc;
+    color: #a5dd91;
 }
 
 .column2 {
