@@ -21,8 +21,7 @@ import seccions_point from "./seccions_point";
 import regions from "./regions";
 import regions_point from "./regions_point";
 import vies_escalada from "./vies_escalada";
-import vies_escalada_agulles from "./vies_escalada_agulles";
-
+import getViesEscaladaAgulles from "./vies_escalada_agulles";
 
 export default {
     "agulles-point": {"type": "geojson","data": agulles, "generateId": true},
@@ -48,6 +47,6 @@ export default {
     "regions-json": {"type": "geojson","data": regions, "generateId": true},
     "regions-point": {"type": "geojson","data": regions_point, "generateId": true},
     "vies_escalada": {"type": "geojson","data": vies_escalada, "generateId": true},
-    "vies_escalada_agulles": {"type": "geojson","data": vies_escalada_agulles, "generateId": true},
+    "vies_escalada_agulles": {"type": "geojson","data": getViesEscaladaAgulles(), "generateId": true},
     "vies_escalada_cluster": {"type": "geojson","data": vies_escalada, "cluster": true, "clusterMaxZoom": 15},
 }
