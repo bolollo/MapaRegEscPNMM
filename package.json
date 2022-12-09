@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@geostarters/eslint-config": "^0.0.3",
-    "fomantic-ui": "^2.8.6",
+    "fomantic-ui": "^2.9.0",
     "jquery": "^3.5.0",
     "mapbox-gl": "^1.5.0",
     "mapbox-gl-controls": "^1.5.5"
